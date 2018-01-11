@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "comma-number": "^2.0.0",
+    "ethereumjs-util": "^5.1.2",
+    "ganache-cli": "^6.0.3",
+    "truffle": "^4.0.4",
+    "truffle-flattener": "^1.2.0",
+    "zeppelin-solidity": "^1.5.0"
+  }
+}
