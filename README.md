@@ -2,13 +2,29 @@
 
 #### Decentralized reputation and payments for peer-to-peer marketplaces.
 
-This repository hosts the **Ink Protocol** Ethereum Smart Contract.
+[Read the Whitepaper](https://paywithink.com/wp-content/uploads/2018/01/Ink_Protocol_Whitepaper_V6_Listia_Inc.pdf)
 
-TODO:
-- [ ] Add whitepaper
-- [ ] Add Mainnet information
-- [ ] Add gas limits
-- [ ] Add ABI
+Ink Protocol is implemented on Ethereum as a Smart Contract and includes an ERC20 compatible utility token, called `XNK`, which is used for payments. `XNK` is a general purpose cryptocurrency that is:
+
+- Fixed supply (500,000,000 `XNK`)
+- Fractionally divisible
+- Non-inflationary
+- Fungible and transferable, likely via third party exchanges
+
+##### Smart Contract features
+
+Ink Protocol solves some of the most common and difficult issues with buying and selling on a P2P marketplace through the following features:
+
+- Decentralized feedback
+- Decentralized reputation
+- Decentralized escrow with third party dispute resolution
+- Mediation and Transaction Fees
+- Linked Addresses
+- Authorized Agents
+
+## Ethereum Main Network
+
+*Details coming soon...*
 
 ## Rinkeby Test Network
 
