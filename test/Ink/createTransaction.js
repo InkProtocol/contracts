@@ -9,12 +9,13 @@ module.exports = (accounts) => {
     token = await InkMock.new()
     mediator = await MediatorMock.new()
     policy = await PolicyMock.new()
-    buyer = accounts[1]
-    seller = accounts[2]
-    agent = accounts[3]
-    amount = 100
     metadata = $ink.metadataToHash({title: "Title"})
   })
+
+  buyer = accounts[1]
+  seller = accounts[2]
+  agent = accounts[3]
+  amount = 100
 
   describe('#createTransaction()', () => {
     this.shouldCreateTheTransaction = (sender, withMedAndPol) => {
@@ -83,29 +84,29 @@ module.exports = (accounts) => {
       })
 
       context("with mediator and no policy", () => {
-        this.shouldFail(accounts[1], true, false)
+        this.shouldFail(buyer, true, false)
       })
 
       context("with no mediator and policy", () => {
-        this.shouldFail(accounts[1], false, true)
+        this.shouldFail(buyer, false, true)
       })
     })
 
     context("when create transaction by seller", () => {
       context("with both mediator and policy", () => {
-        this.shouldFail(accounts[2], true, true)
+        this.shouldFail(seller, true, true)
       })
 
       context("without both mediator and policy", () => {
-        this.shouldFail(accounts[2], false, false)
+        this.shouldFail(seller, false, false)
       })
 
       context("with mediator and no policy", () => {
-        this.shouldFail(accounts[2], true, false)
+        this.shouldFail(seller, true, false)
       })
 
       context("with no mediator and policy", () => {
-        this.shouldFail(accounts[2], false, true)
+        this.shouldFail(seller, false, true)
       })
 
     })

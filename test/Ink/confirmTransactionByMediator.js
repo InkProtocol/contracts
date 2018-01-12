@@ -17,7 +17,7 @@ module.exports = (accounts) => {
       it("fails when not confirmed by mediator", async () => {
         let { transaction, mediator } = await $ink.createTransaction(buyer, seller, { token: token, state: $ink.states.Escalated, amount: amount })
 
-        await $ink.assertVMExceptionAsync("revert", mediator.confirmTransaction(transaction.id, { from: sender }))
+        await $ink.assertVMExceptionAsync("revert", token.confirmTransactionByMediator(transaction.id, { from: sender }))
       })
     }
 
@@ -72,7 +72,7 @@ module.exports = (accounts) => {
             let { transaction, mediator } = await $ink.createTransaction(buyer, seller, { token: token, amount: amount })
             await token._updateTransactionState(transaction.id, state)
 
-            await $ink.assertVMExceptionAsync("revert", mediator.confirmTransaction(transaction.id, { from: sender }))
+            await $ink.assertVMExceptionAsync("revert", mediator.confirmTransaction(transaction.id, token.address, { from: sender }))
           })
         })
       }
