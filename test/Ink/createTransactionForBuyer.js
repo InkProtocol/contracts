@@ -9,12 +9,13 @@ module.exports = (accounts) => {
     token = await InkMock.new()
     mediator = await MediatorMock.new()
     policy = await PolicyMock.new()
-    buyer = accounts[1]
-    seller = accounts[2]
-    agent = accounts[3]
-    amount = 100
     metadata = $ink.metadataToHash({title: "Title"})
   })
+
+  buyer = accounts[1]
+  seller = accounts[2]
+  agent = accounts[3]
+  amount = 100
 
   describe('#createTransactionForBuyer()', () => {
     this.shouldCreateTheTransactionForBuyer = (sender) => {
@@ -86,22 +87,23 @@ module.exports = (accounts) => {
     }
 
     context("when create transaction for buyer by buyer", () => {
-      this.shouldFail(accounts[1])
+      // Buyer also as an authorized agent by himself
+      this.shouldCreateTheTransactionForBuyer(buyer)
     })
 
     context("when create transaction for buyer by seller", () => {
-      this.shouldFail(accounts[2])
+      this.shouldFail(seller)
     })
 
     context("when create transaction for buyer by authorized agent", () => {
       beforeEach(async () => {
-        await token.authorize(accounts[3], { from: accounts[1] })
+        await token.authorize(agent, { from: buyer })
       })
-      this.shouldCreateTheTransactionForBuyer(accounts[3])
+      this.shouldCreateTheTransactionForBuyer(agent)
     })
 
     context("when create transaction for buyer by unauthorized agent", () => {
-      this.shouldFail(accounts[3])
+      this.shouldFail(agent)
     })
   })
 }
