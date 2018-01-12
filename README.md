@@ -30,6 +30,6 @@ Ink Protocol solves some of the most common and difficult issues with buying and
 
 Ink Protocol is deployed to the Rinkby Test Network. You may test your interactions with the protocol there and even request free test `XNK` from the contract.
 
-**Contract Address: [`0xc9e81c6E3eE959443719F1f4d37Ba3B6C16c0654`](https://rinkeby.etherscan.io/address/0xc9e81c6e3ee959443719f1f4d37ba3b6c16c0654)**
+**Contract Address:** [`0xc9e81c6E3eE959443719F1f4d37Ba3B6C16c0654`](https://rinkeby.etherscan.io/address/0xc9e81c6e3ee959443719f1f4d37ba3b6c16c0654)
 
-Please read our Testnet wiki article for more details.
+Please read our [wiki page](https://github.com/InkProtocol/ink-protocol/wiki/Rinkeby-Test-Network) for more details.
