@@ -19,7 +19,7 @@ module.exports = (accounts) => {
       it("fails when not refunded by mediator", async () => {
         let { transaction } = await $ink.createTransaction(buyer, seller, { mediator: mediator, token: token, state: $ink.states.Escalated, amount: amount })
 
-        await $ink.assertVMExceptionAsync("revert", token.refundTransaction(transaction.id, { from: sender }))
+        await $ink.assertVMExceptionAsync("revert", token.refundTransactionByMediator(transaction.id, { from: sender }))
       })
     }
 
