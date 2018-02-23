@@ -1,0 +1,28 @@
+dist: trusty
+language: node_js
+cache: yarn
+
+node_js:
+  - "8"
+install:
+  - yarn install
+
+script:
+  - yarn run truffle test test/acceptTransaction.js
+  - yarn run truffle test test/confirmTransaction.js
+  - yarn run truffle test test/confirmTransactionAfterExpiry.js
+  - yarn run truffle test test/confirmTransactionByMediator.js
+  - yarn run truffle test test/createTransaction.js
+  - yarn run truffle test test/disputeTransaction.js
+  - yarn run truffle test test/escalateDisputeToMediator.js
+  - yarn run truffle test test/InkProtocol.js
+  - yarn run truffle test test/link.js
+  - yarn run truffle test test/provideTransactionFeedback.js
+  - yarn run truffle test test/refundTransaction.js
+  - yarn run truffle test test/refundTransactionAfterExpiry.js
+  - yarn run truffle test test/refundTransactionByMediator.js
+  - yarn run truffle test test/revokeTransaction.js
+  - yarn run truffle test test/settleTransaction.js
+  - yarn run truffle test test/settleTransactionByMediator.js
+  - yarn run truffle test test/transfer.js
+  - yarn run truffle test test/transferFrom.js
