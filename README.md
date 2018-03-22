@@ -27,7 +27,10 @@ Ink Protocol solves some of the most common and difficult issues with buying and
 
 ## Ethereum Main Network
 
-*Details coming soon...*
+Ink Protocol is deployed on Mainnet.
+
+**Contract Address:** [`0xBC86727E770de68B1060C91f6BB6945c73e10388`](https://etherscan.io/token/0xbc86727e770de68b1060c91f6bb6945c73e10388)
+
 
 ## Rinkeby Test Network
 
